@@ -36,4 +36,7 @@ function update() {
     else if (cursors.down.isDown) {
         char.body.velocity.y = 150;
     }
+
+    // distance to alarm
+    distance = game.physics.arcade.distanceBetween(char, alarm_clock);
 }
