@@ -1,0 +1,23 @@
+MAIN TOPIC: WAVES
+
+todo (main functions):
+- random map
+    - code to create map
+    - show full map -> map size defined by game size
+    - calculator for distance to goal
+- game name
+- assets
+    - create map images
+    - create caracter images
+    - craate items images (clock/music box/…)
+- caracter
+    - should move
+
+- map style
+    - black
+    - visible circle around the caracter
+    - movment control (moving on a grid, pressing one time the button moves the caracter on field.
+
+todo (add. functions):
+- time based events e.g. noon: "you should eat!"; if it is dark outsite, the same in the game
+- wether api (if it rains outside play rain sound)
