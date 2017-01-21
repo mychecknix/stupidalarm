@@ -31,6 +31,7 @@ stretch goals:
     - weather api (if it rains outside play rain sound)
     - map size defined by game size
     - animation: sleeping character
+    - score board
 
 finalizing:
     - remove all non license compliant parts (phaser -> link, music?)
