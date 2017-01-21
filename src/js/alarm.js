@@ -6,7 +6,6 @@
  */
 function add_alarm_clock(x, y) {
     alarmClock = game.add.sprite(x, y, 'dummy');
-    alarmClock.tint = 0xff00ff;
     alarm = game.add.audio('alarm', 0, true);
     alarm.play();
 }
