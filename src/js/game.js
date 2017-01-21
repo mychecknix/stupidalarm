@@ -34,6 +34,12 @@ function create() {
     game.physics.enable(char, Phaser.Physics.ARCADE);
     char.body.collideWorldBounds = true;
 
+    // add animation to character
+    char.animations.add('up', [1, 5], 10, true);
+    char.animations.add('down', [0, 4], 10, true);
+    char.animations.add('left', [2, 6], 10, true);
+    char.animations.add('right', [3, 7], 10, true);
+
     // cursors for movement
     cursors = game.input.keyboard.createCursorKeys();
 
