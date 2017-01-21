@@ -17,11 +17,3 @@ function movement() {
         char.body.velocity.y = 150;
     }
 }
-
-function updateAudioVolume() {
-    distance = game.physics.arcade.distanceBetween(char, alarmClock);
-    diff = maxDistance - distance;
-    percentPerPixel = 100/maxDistance;
-    volume = (percentPerPixel * diff) / 100;
-    alarm.volume = volume;
-}
