@@ -23,7 +23,7 @@ var BOX_SIZE = 32;
 var CHARACTER_FRAME_RATE = 5;
 
 function preload() {
-    game.load.image('dummy', 'assets/dummy.png');
+    game.load.image('dummy', 'assets/clock.png');
     game.load.spritesheet('character', 'assets/character_sprite.png', 16, 32, 8);
     game.load.audio('alarm', 'assets/Kevin_MacLeod_-_Monkeys_Spinning_Monkeys.mp3');
     game.load.image('tiles', 'assets/tiles.png');
@@ -36,7 +36,7 @@ function create() {
     map = game.add.tilemap('maze');
     map.addTilesetImage('Maze', 'tiles');
     layer = map.createLayer(0);
-    map.setCollisionByExclusion([0]);
+    map.setCollisionByExclusion([MAZE_FLOOR]);
 
     // add character and enable physics
     char = game.add.sprite(maze.startCell.x * BOX_SIZE + 8, maze.startCell.y * BOX_SIZE, 'character', 1);

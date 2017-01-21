@@ -8,11 +8,11 @@ main goals:
     ✓ game name
     - assets
         ✓ create map images
-        - create character images
+        ✓ create character images
         - create items images (clock/music box/…)
-    - character
+    ✓ character
         ✓ should move
-        - animation
+        ✓ animation
     - map style
         ✓ black
         ✓ visible circle around the character
