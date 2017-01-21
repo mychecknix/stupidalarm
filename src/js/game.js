@@ -1,3 +1,13 @@
+var actualGame = function() {};
+
+actualGame.prototype = {
+    create: function() {
+        console.log("Ready, Set, Go!");
+        this.game.state.start("GameOver", true, true, 120);
+    }
+};
+
+
 var alarm;
 var alarmClock;
 var mask;
@@ -58,7 +68,7 @@ function update() {
 
     update_audio_volume();
 
-    if (game.physics.arcade.distanceBetween(char, alarmClock) <= boxSize) {
+    if (game.physics.arcade.distanceBetween(char, alarmClock) <= BOX_SIZE) {
         game_won();
     }
 }
