@@ -10,6 +10,7 @@ var mazeHeight = 18;
 var maze;
 var char;
 var cursors;
+var boxSize = 32;
 
 function preload() {
     game.load.image('dummy', 'assets/dummy.png');
@@ -29,20 +30,20 @@ function create() {
     map.setCollisionByExclusion([0]);
 
     // add character and enable physics
-    char = game.add.sprite(0, 0, 'character', 1);
+    char = game.add.sprite(maze.startCell.x * boxSize, maze.startCell.y * boxSize, 'character', 1);
     game.physics.enable(char, Phaser.Physics.ARCADE);
     char.body.collideWorldBounds = true;
 
     // cursors for movement
     cursors = game.input.keyboard.createCursorKeys();
 
-    add_alarm_clock();
+    add_alarm_clock(maze.lastCell.x * boxSize, maze.lastCell.y * boxSize);
     maxDistance = calc_max_distance();
 
     // mask
-    mask = game.add.graphics(0,0);
+    mask = game.add.graphics(0, 0);
     mask.beginFill(0xffffff, 1);
-    mask.drawCircle(char.position.x, char.position.y, 150);
+    mask.drawCircle(8, 16, 150);
     layer.mask = mask;
 }
 
@@ -51,8 +52,7 @@ function update() {
 
     movement();
 
-    mask.position.x = char.position.x + 16;
-    mask.position.y = char.position.y + 16;
+    mask.position = char.position;
 
     update_audio_volume();
 }
