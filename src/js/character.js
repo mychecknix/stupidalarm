@@ -24,6 +24,11 @@ function movement() {
     else if (cursors.down.isDown) {
         char.body.velocity.y = 150;
         char.animations.play('down');
+    }else{
+        char.animations.stop('left');
+        char.animations.stop('right');
+        char.animations.stop('up');
+        char.animations.stop('down');
     }
 
     mask.position = char.position;

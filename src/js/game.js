@@ -11,6 +11,7 @@ var maze;
 var char;
 var cursors;
 var boxSize = 32;
+var CHARACTER_FRAME_RATE = 5;
 
 function preload() {
     game.load.image('dummy', 'assets/dummy.png');
@@ -35,10 +36,10 @@ function create() {
     char.body.collideWorldBounds = true;
 
     // add animation to character
-    char.animations.add('up', [1, 5], 10, true);
-    char.animations.add('down', [0, 4], 10, true);
-    char.animations.add('left', [2, 6], 10, true);
-    char.animations.add('right', [3, 7], 10, true);
+    char.animations.add('up', [1, 5], CHARACTER_FRAME_RATE, true);
+    char.animations.add('down', [0, 4], CHARACTER_FRAME_RATE, true);
+    char.animations.add('left', [2, 6], CHARACTER_FRAME_RATE, true);
+    char.animations.add('right', [3, 7], CHARACTER_FRAME_RATE, true);
 
     // cursors for movement
     cursors = game.input.keyboard.createCursorKeys();
