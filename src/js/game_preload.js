@@ -14,6 +14,6 @@ gamePreload.prototype = {
         this.game.load.image("play", "assets/play.png");
     },
     create: function() {
-        this.game.start.state("Menu");
+        this.game.state.start("Menu");
     }
 };

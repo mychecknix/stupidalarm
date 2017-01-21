@@ -4,4 +4,4 @@ game.state.add("Preload", gamePreload);
 game.state.add("Menu", gameMenu);
 game.state.add("StupidAlarm", actualGame);
 game.state.add("GameOver", gameOver);
-game.start.state("Boot");
+game.state.start("Boot");
