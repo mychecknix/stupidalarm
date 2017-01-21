@@ -17,6 +17,11 @@ function movement() {
         char.body.velocity.x = 150;
         char.animations.play('right');
     }
+    else {
+        char.animations.stop('left');
+        char.animations.stop('right');
+    }
+
     if (cursors.up.isDown) {
         char.body.velocity.y = -150;
         char.animations.play('up');
@@ -25,8 +30,6 @@ function movement() {
         char.body.velocity.y = 150;
         char.animations.play('down');
     } else {
-        char.animations.stop('left');
-        char.animations.stop('right');
         char.animations.stop('up');
         char.animations.stop('down');
     }
