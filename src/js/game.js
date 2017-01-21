@@ -27,7 +27,7 @@ function create() {
     map = game.add.tilemap('maze');
     map.addTilesetImage('Maze', 'tiles');
     layer = map.createLayer(0);
-    map.setCollisionByExclusion([0]);
+    map.setCollisionByExclusion([MAZE_FLOOR]);
 
     // add character and enable physics
     char = game.add.sprite(maze.startCell.x * BOX_SIZE + 8, maze.startCell.y * BOX_SIZE, 'character', 1);

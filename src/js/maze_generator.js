@@ -1,6 +1,6 @@
-var MAZE_WALL = '1';
-var MAZE_FLOOR = '0';
-var MAZE_GOAL = '2';
+var MAZE_WALL = 1;
+var MAZE_FLOOR = 0;
+var MAZE_GOAL = 2;
 
 /**
  * generates a maze
