@@ -38,15 +38,18 @@ actualGame.prototype = {
         // cursors for movement
         cursors = game.input.keyboard.createCursorKeys();
 
-    // add alarm clock
-    add_alarm_clock();
-    maxDistance = calc_max_distance(maze.lastCell.x * BOX_SIZE, maze.lastCell.y * BOX_SIZE);
+        // add alarm clock
+        add_alarm_clock();
+        maxDistance = calc_max_distance(maze.lastCell.x * BOX_SIZE, maze.lastCell.y * BOX_SIZE);
 
         // add mask around character
         mask = game.add.graphics(0, 0);
         mask.beginFill(0xffffff, 1);
         mask.drawCircle(8, 16, 150);
-        layer.mask = mask;
+        // layer.mask = mask;
+
+        game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
+        game.input.onDown.add(goFull, this);
     },
     update: function() {
         movement();
@@ -59,3 +62,12 @@ actualGame.prototype = {
         }
     }
 };
+
+function goFull() {
+    if (game.scale.isFullScreen) {
+        game.scale.stopFullScreen();
+    }
+    else {
+        game.scale.startFullScreen(false);
+    }
+}
