@@ -11,6 +11,7 @@ gamePreload.prototype = {
         this.game.load.audio("alarm", "assets/Kevin_MacLeod_-_Monkeys_Spinning_Monkeys.mp3");
         this.game.load.spritesheet("tiles", "assets/tiles.png", 32, 32, 3);
         this.game.load.image("play", "assets/play.png");
+        this.game.load.image("bigCharacter", "assets/character_big.png");
     },
     create: function() {
         this.game.state.start("Menu");

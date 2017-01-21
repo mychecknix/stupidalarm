@@ -10,8 +10,8 @@ gameMenu.prototype = {
         //clock
         var tilepart3 = this.game.add.sprite(this.game.width - 32, this.game.height - 64, 'tiles', 2);
         //character
-        var tilepart4 = this.game.add.sprite(this.game.width * 0.7, this.game.height * 0.2, 'character', 0);
-        tilepart4.scale.setTo(10, 10);
+        var tilepart4 = this.game.add.sprite(this.game.width * 0.7, this.game.height * 0.2, 'bigCharacter', 0);
+        //tilepart4.scaleetTo(10, 10);
 
         space = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     },
