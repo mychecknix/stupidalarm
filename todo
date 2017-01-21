@@ -26,6 +26,7 @@ main goals:
 stretch goals:
     - time based events e.g. noon: "you should eat!"; if it is dark outside, the same in the game
     - if it's dark outside, you see less but it's quiet
+    - fade in the circle where you see something
     - if there is daylight, you see more, but there is also some noise
     - weather api (if it rains outside play rain sound)
     - map size defined by game size
