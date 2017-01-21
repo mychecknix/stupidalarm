@@ -11,13 +11,16 @@ main goals:
         - create character images
         - create items images (clock/music box/…)
     - character
-        - should move
+        ✓ should move
     - map style
         - black
         - visible circle around the character
         - movement control (moving on a grid, pressing one time the button moves the character one field)
     - sound
         - play sound from clock (loudness proportional to distance from the clock)
+    - screens
+        - (re)start screen
+        - winning screen
 
 stretch goals:
     - time based events e.g. noon: "you should eat!"; if it is dark outside, the same in the game
