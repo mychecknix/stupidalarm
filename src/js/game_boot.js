@@ -4,6 +4,7 @@ var gameBoot = function(game) {
 
 gameBoot.prototype = {
     preload: function() {
+        //TODO replace loading.png
         this.game.load.image("loading", "assets/loading.png");
     },
     create: function() {
