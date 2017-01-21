@@ -31,9 +31,9 @@ function calc_max_distance() {
 }
 
 function update_audio_volume() {
-    distance = game.physics.arcade.distanceBetween(char, alarmClock);
-    diff = maxDistance - distance;
-    percentPerPixel = 100/maxDistance;
-    volume = (percentPerPixel * diff) / 100;
+    var distance = game.physics.arcade.distanceBetween(char, alarmClock);
+    var diff = maxDistance - distance;
+    var percentPerPixel = 100/maxDistance;
+    var volume = (percentPerPixel * diff) / 100;
     alarm.volume = volume;
 }
