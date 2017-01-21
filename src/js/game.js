@@ -50,7 +50,7 @@ actualGame.prototype = {
 
         // add fullscreen mode
         game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
-        game.input.onDown.add(goFull, this);
+        game.input.onDown.add(goFull, this); // TODO only enter fullscreen on mouse click (or better, add double click for fullscreen)
     },
     update: function() {
         movement();
