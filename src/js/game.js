@@ -1,5 +1,6 @@
 var game = new Phaser.Game(1024, 576, Phaser.AUTO, 'game', {preload: preload, create: create, update: update});
 var alarm;
+var alarmClock;
 var maxDistance;
 
 function preload() {
@@ -23,5 +24,5 @@ function create() {
 function update() {
     movement();
 
-    updateAudioVolume();
+    update_audio_volume();
 }
