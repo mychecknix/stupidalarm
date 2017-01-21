@@ -21,13 +21,12 @@ function preload() {
 }
 
 function create() {
+    // generate and add maze
     maze = maze_generator(mazeWidth, mazeHeight);
-    log_maze(maze);
     game.load.tilemap('maze', null, get_csv_from_array(maze.maze), Phaser.Tilemap.CSV);
     map = game.add.tilemap('maze');
     map.addTilesetImage('Maze', 'tiles');
     layer = map.createLayer(0);
-
     map.setCollisionByExclusion([0]);
 
     // add character and enable physics
@@ -44,10 +43,11 @@ function create() {
     // cursors for movement
     cursors = game.input.keyboard.createCursorKeys();
 
+    // add alarm clock
     add_alarm_clock(maze.lastCell.x * boxSize, maze.lastCell.y * boxSize);
     maxDistance = calc_max_distance();
 
-    // mask
+    // add mask around character
     mask = game.add.graphics(0, 0);
     mask.beginFill(0xffffff, 1);
     mask.drawCircle(8, 16, 150);
