@@ -140,6 +140,12 @@ function log_maze(maze) {
     console.log('end: ' + maze.lastCell.x + ', ' + maze.lastCell.y);
 }
 
+/**
+ * generate csv from an array
+ *
+ * @param array
+ * @returns {string}
+ */
 function get_csv_from_array(array) {
     var csv = "";
     var line = "";

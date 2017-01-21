@@ -1,3 +1,9 @@
+/**
+ * add an alarm clock to the map
+ *
+ * @param x
+ * @param y
+ */
 function add_alarm_clock(x, y) {
     alarmClock = game.add.sprite(x, y, 'dummy');
     alarmClock.tint = 0xff00ff;
@@ -5,6 +11,11 @@ function add_alarm_clock(x, y) {
     alarm.play();
 }
 
+/**
+ * calculate the maximum distance between the alarm clock and the character
+ *
+ * @returns {*}
+ */
 function calc_max_distance() {
     var distance;
     if (alarmClock.position.x > (game.width / 2)) {
@@ -30,6 +41,9 @@ function calc_max_distance() {
     return distance;
 }
 
+/**
+ * set the volume of the alarm clock
+ */
 function update_audio_volume() {
     var distance = game.physics.arcade.distanceBetween(char, alarmClock);
     var diff = maxDistance - distance;

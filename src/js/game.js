@@ -48,11 +48,7 @@ function create() {
 }
 
 function update() {
-    game.physics.arcade.collide(char, layer);
-
     movement();
-
-    mask.position = char.position;
 
     update_audio_volume();
 }
