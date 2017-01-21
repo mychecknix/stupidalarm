@@ -5,7 +5,7 @@ main goals:
         ✓ code to create map (use randomized Prim's algorithm)
         - render full map -> map size defined by game size
         ✓ calculator for distance to goal
-    - game name
+    ✓ game name
     - assets
         - create map images
         - create character images
