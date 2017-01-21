@@ -12,8 +12,7 @@ gameMenu.prototype = {
         //character
         var tilepart4 = this.game.add.sprite(this.game.width * 0.7, this.game.height * 0.2, 'character', 0);
         tilepart4.scale.setTo(10, 10);
-        var playGame = this.game.add.button(160, 320, 'play', this.playGame, this);
-        playGame.anchor.setTo(0.5, 0.5);
+
         space = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     },
     update: function() {
