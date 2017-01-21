@@ -1,6 +1,7 @@
 var game = new Phaser.Game(1024, 576, Phaser.AUTO, 'game', {preload: preload, create: create, update: update});
 var alarm;
 var alarmClock;
+var mask;
 var maxDistance;
 var map;
 var layer;
@@ -32,10 +33,19 @@ function create() {
 
     add_alarm_clock();
     maxDistance = calc_max_distance();
+
+    // mask
+    mask = game.add.graphics(0,0);
+    mask.beginFill(0xffffff);
+    mask.drawCircle(char.position.x, char.position.y, 150);
+    layer.mask = mask;
 }
 
 function update() {
     movement();
+
+    mask.position.x = char.position.x + 16;
+    mask.position.y = char.position.y + 16;
 
     update_audio_volume();
 }
