@@ -1,4 +1,3 @@
-var game = new Phaser.Game(1024, 576, Phaser.AUTO, 'game', {preload: preload, create: create, update: update});
 var alarm;
 var alarmClock;
 var mask;
