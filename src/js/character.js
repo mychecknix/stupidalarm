@@ -1,5 +1,5 @@
 //character frame after a new key
-charpointer = 1;
+var charpointer = 1;
 
 function movement() {
     // reset character movement

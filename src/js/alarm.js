@@ -7,8 +7,8 @@ function add_alarm_clock() {
 
 function calc_max_distance() {
     var distance;
-    if (alarmClock.position.x > (game.width/2)) {
-        if (alarmClock.position.y > (game.height/2)) {
+    if (alarmClock.position.x > (game.width / 2)) {
+        if (alarmClock.position.y > (game.height / 2)) {
             // in lower right
             distance = game.physics.arcade.distanceToXY(alarmClock, 0, 0);
         }
@@ -18,7 +18,7 @@ function calc_max_distance() {
         }
     }
     else {
-        if (alarmClock.position.y > (game.height/2)) {
+        if (alarmClock.position.y > (game.height / 2)) {
             // in lower left
             distance = game.physics.arcade.distanceToXY(alarmClock, game.width, 0);
         }
@@ -33,7 +33,6 @@ function calc_max_distance() {
 function update_audio_volume() {
     var distance = game.physics.arcade.distanceBetween(char, alarmClock);
     var diff = maxDistance - distance;
-    var percentPerPixel = 100/maxDistance;
-    var volume = (percentPerPixel * diff) / 100;
-    alarm.volume = volume;
+    var percentPerPixel = 100 / maxDistance;
+    alarm.volume = (percentPerPixel * diff) / 100;
 }

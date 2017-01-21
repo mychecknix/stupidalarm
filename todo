@@ -1,22 +1,23 @@
 MAIN TOPIC: WAVES
 
 main goals:
-    - random map
+    ✓ random map
         ✓ code to create map (use randomized Prim's algorithm)
-        - render full map -> map size defined by game size
+        ✓ render full map
         ✓ calculator for distance to goal
     ✓ game name
     - assets
-        - create map images
+        ✓ create map images
         - create character images
         - create items images (clock/music box/…)
     - character
         ✓ should move
+        - animation
     - map style
-        - black
-        - visible circle around the character
+        ✓ black
+        ✓ visible circle around the character
         - movement control (moving on a grid, pressing one time the button moves the character one field)
-    - sound
+    ✓ sound
         ✓ play sound from clock (loudness proportional to distance from the clock)
     - screens
         - (re)start screen
@@ -27,3 +28,4 @@ stretch goals:
     - if it's dark outside, you see less but it's quiet
     - if there is daylight, you see more, but there is also some noise
     - weather api (if it rains outside play rain sound)
+    - map size defined by game size
