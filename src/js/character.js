@@ -1,3 +1,6 @@
+//character frame after a new key
+charpointer = 1;
+
 function movement() {
     // reset character movement
     char.body.velocity.x = 0;
@@ -15,5 +18,10 @@ function movement() {
     }
     else if (cursors.down.isDown) {
         char.body.velocity.y = 150;
+        if ((charpointer % 4) !== 1){
+            char.frame = 5;
+            charpointer = 1;
+        }
+        char.frame = (char.frame + 4) % 8;
     }
 }

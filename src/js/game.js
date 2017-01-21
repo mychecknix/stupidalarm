@@ -11,6 +11,7 @@ var maze;
 
 function preload() {
     game.load.image('dummy', 'assets/dummy.png');
+    game.load.spritesheet('character', 'assets/character_sprite.png', 16, 32, 8);
     game.load.audio('alarm', 'assets/Kevin_MacLeod_-_Monkeys_Spinning_Monkeys.mp3');
     game.load.image('tiles', 'assets/tiles.png');
 }
@@ -28,7 +29,7 @@ function create() {
     map.setCollisionByExclusion([0]);
 
     // add character and enable physics
-    char = game.add.sprite(0, 0, 'dummy');
+    char = game.add.sprite(0, 0, 'character', 1);
     game.physics.enable(char, Phaser.Physics.ARCADE);
     char.body.collideWorldBounds = true;
 
