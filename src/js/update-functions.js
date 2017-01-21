@@ -19,6 +19,9 @@ function movement() {
 }
 
 function updateAudioVolume() {
-    max_distance = Phaser.Math.distance(0, 0, game.width, game.height)
-    distance = game.physics.arcade.distanceBetween(char, alarm_clock);
+    distance = game.physics.arcade.distanceBetween(char, alarmClock);
+    diff = maxDistance - distance;
+    percentPerPixel = 100/maxDistance;
+    volume = (percentPerPixel * diff) / 100;
+    alarm.volume = volume;
 }
