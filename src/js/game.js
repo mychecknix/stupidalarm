@@ -58,4 +58,12 @@ function update() {
     movement();
 
     update_audio_volume();
+
+    if (game.physics.arcade.distanceBetween(char, alarmClock) <= boxSize) {
+        game_won();
+    }
+}
+
+function game_won() {
+    alarm.stop();
 }
