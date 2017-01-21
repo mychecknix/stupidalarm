@@ -6,10 +6,10 @@ main goals:
         ✓ render full map
         ✓ calculator for distance to goal
     ✓ game name
-    - assets
+    ✓ assets
         ✓ create map images
         ✓ create character images
-        - create items images (clock/music box/…)
+        ✓ create items images (clock/music box/…)
     ✓ character
         ✓ should move
         ✓ animation
@@ -20,7 +20,7 @@ main goals:
     ✓ sound
         ✓ play sound from clock (loudness proportional to distance from the clock)
     - screens
-        - (re)start screen
+        ✓ (re)start screen
         - winning screen
 
 stretch goals:
