@@ -30,7 +30,7 @@ function create() {
     map.setCollisionByExclusion([0]);
 
     // add character and enable physics
-    char = game.add.sprite(maze.startCell.x * boxSize, maze.startCell.y * boxSize, 'character', 1);
+    char = game.add.sprite(maze.startCell.x * boxSize + 8, maze.startCell.y * boxSize, 'character', 1);
     game.physics.enable(char, Phaser.Physics.ARCADE);
     char.body.collideWorldBounds = true;
 
