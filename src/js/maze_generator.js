@@ -1,5 +1,5 @@
-var MAZE_WALL = '*';
-var MAZE_FLOOR = '.';
+var MAZE_WALL = '1';
+var MAZE_FLOOR = '0';
 
 /**
  * generates a maze
@@ -120,4 +120,41 @@ function maze_generator(width, height) {
  */
 function get_random_int(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+/**
+ * log the maze to the console
+ *
+ * @param maze
+ */
+function log_maze(maze) {
+    var out = '';
+    for (var i = 0; i < maze.maze[0].length; i++) {
+        for (var j = 0; j < maze.maze.length; j++) {
+            out = out + maze.maze[j][i];
+        }
+        out = out + "\n";
+    }
+    console.log(out);
+    console.log('start: ' + maze.startCell.x + ', ' + maze.startCell.y);
+    console.log('end: ' + maze.lastCell.x + ', ' + maze.lastCell.y);
+}
+
+function get_csv_from_array(array) {
+    var csv = "";
+    var line = "";
+    for (var i = 0; i < array[0].length; i++) {
+        line = "";
+        for (var j = 0; j < array.length; j++) {
+            if (line === "") {
+                line = array[j][i];
+            }
+            else {
+                line = line + "," + array[j][i];
+            }
+        }
+        csv = csv + line + "\n";
+    }
+
+    return csv;
 }
