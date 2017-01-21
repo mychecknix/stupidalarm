@@ -1,8 +1,5 @@
 /**
  * add an alarm clock to the map
- *
- * @param x
- * @param y
  */
 function add_alarm_clock() {
     alarm = game.add.audio('alarm', 0, true);
@@ -12,6 +9,8 @@ function add_alarm_clock() {
 /**
  * calculate the maximum distance between the alarm clock and the character
  *
+ * @param x
+ * @param y
  * @returns {*}
  */
 function calc_max_distance(x, y) {

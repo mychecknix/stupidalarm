@@ -48,6 +48,7 @@ actualGame.prototype = {
         mask.drawCircle(8, 16, 150);
         layer.mask = mask;
 
+        // add fullscreen mode
         game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
         game.input.onDown.add(goFull, this);
     },
