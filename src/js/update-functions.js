@@ -19,5 +19,6 @@ function movement() {
 }
 
 function updateAudioVolume() {
+    max_distance = Phaser.Math.distance(0, 0, game.width, game.height)
     distance = game.physics.arcade.distanceBetween(char, alarm_clock);
 }
