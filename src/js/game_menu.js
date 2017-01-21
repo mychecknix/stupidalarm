@@ -7,8 +7,9 @@ gameMenu.prototype = {
         space = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     },
     update: function() {
-        if (space.isDown)
+        if (space.isDown) {
             this.playGame();
+        }
     },
     playGame: function() {
         this.game.state.start("StupidAlarm");
