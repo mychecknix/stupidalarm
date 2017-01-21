@@ -10,7 +10,6 @@ gamePreload.prototype = {
         this.game.load.spritesheet("character", "assets/character_sprite.png", 16, 32, 8);
         this.game.load.audio("alarm", "assets/Kevin_MacLeod_-_Monkeys_Spinning_Monkeys.mp3");
         this.game.load.image("tiles", "assets/tiles.png");
-        //TODO replace play.png
         this.game.load.image("play", "assets/play.png");
     },
     create: function() {
