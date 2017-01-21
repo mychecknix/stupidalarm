@@ -4,8 +4,7 @@
  * @param x
  * @param y
  */
-function add_alarm_clock(x, y) {
-    alarmClock = game.add.sprite(x, y, 'dummy');
+function add_alarm_clock() {
     alarm = game.add.audio('alarm', 0, true);
     alarm.play();
 }
@@ -15,10 +14,14 @@ function add_alarm_clock(x, y) {
  *
  * @returns {*}
  */
-function calc_max_distance() {
+function calc_max_distance(x, y) {
     var distance;
-    if (alarmClock.position.x > (game.width / 2)) {
-        if (alarmClock.position.y > (game.height / 2)) {
+    alarmClock = {
+        x: x,
+        y: y
+    };
+    if (alarmClock.x > (game.width / 2)) {
+        if (alarmClock.y > (game.height / 2)) {
             // in lower right
             distance = game.physics.arcade.distanceToXY(alarmClock, 0, 0);
         }
@@ -28,7 +31,7 @@ function calc_max_distance() {
         }
     }
     else {
-        if (alarmClock.position.y > (game.height / 2)) {
+        if (alarmClock.y > (game.height / 2)) {
             // in lower left
             distance = game.physics.arcade.distanceToXY(alarmClock, game.width, 0);
         }

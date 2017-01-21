@@ -1,5 +1,6 @@
 var MAZE_WALL = '1';
 var MAZE_FLOOR = '0';
+var MAZE_GOAL = '2';
 
 /**
  * generates a maze
@@ -104,6 +105,8 @@ function maze_generator(width, height) {
         // Step 3.2: Remove the wall from the list
         walls.splice(wall_id, 1);
     }
+
+    maze[lastCell.x][lastCell.y] = MAZE_GOAL;
 
     return {
         startCell: startCell,

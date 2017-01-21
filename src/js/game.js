@@ -14,7 +14,7 @@ var BOX_SIZE = 32;
 var CHARACTER_FRAME_RATE = 5;
 
 function preload() {
-    game.load.image('dummy', 'assets/clock.png');
+    //game.load.image('dummy', 'assets/clock.png');
     game.load.spritesheet('character', 'assets/character_sprite.png', 16, 32, 8);
     game.load.audio('alarm', 'assets/Kevin_MacLeod_-_Monkeys_Spinning_Monkeys.mp3');
     game.load.image('tiles', 'assets/tiles.png');
@@ -44,8 +44,8 @@ function create() {
     cursors = game.input.keyboard.createCursorKeys();
 
     // add alarm clock
-    add_alarm_clock(maze.lastCell.x * BOX_SIZE, maze.lastCell.y * BOX_SIZE);
-    maxDistance = calc_max_distance();
+    add_alarm_clock();
+    maxDistance = calc_max_distance(maze.lastCell.x * BOX_SIZE, maze.lastCell.y * BOX_SIZE);
 
     // add mask around character
     mask = game.add.graphics(0, 0);
