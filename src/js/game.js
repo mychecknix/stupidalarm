@@ -1,4 +1,4 @@
-var game = new Phaser.Game(1024, 576, Phaser.AUTO, '', {preload: preload, create: create, update: update});
+var game = new Phaser.Game(1024, 576, Phaser.AUTO, 'game', {preload: preload, create: create, update: update});
 
 function preload() {
     game.load.image('dummy', 'assets/dummy.png');
@@ -19,24 +19,7 @@ function create() {
 }
 
 function update() {
-    // reset character movement
-    char.body.velocity.x = 0;
-    char.body.velocity.y = 0;
+    movement();
 
-    // character movement
-    if (cursors.left.isDown) {
-        char.body.velocity.x = -150;
-    }
-    else if (cursors.right.isDown) {
-        char.body.velocity.x = 150;
-    }
-    if (cursors.up.isDown) {
-        char.body.velocity.y = -150;
-    }
-    else if (cursors.down.isDown) {
-        char.body.velocity.y = 150;
-    }
-
-    // distance to alarm
-    distance = game.physics.arcade.distanceBetween(char, alarm_clock);
+    updateAudioVolume();
 }
