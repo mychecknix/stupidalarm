@@ -18,10 +18,5 @@ function movement() {
     }
     else if (cursors.down.isDown) {
         char.body.velocity.y = 150;
-        if ((charpointer % 4) !== 1){
-            char.frame = 5;
-            charpointer = 1;
-        }
-        char.frame = (char.frame + 4) % 8;
     }
 }

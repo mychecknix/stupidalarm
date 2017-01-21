@@ -8,9 +8,7 @@ var layer;
 var mazeWidth = 32;
 var mazeHeight = 18;
 var maze;
-var char;
-var cursors;
-var boxSize = 32;
+var anim;
 
 function preload() {
     game.load.image('dummy', 'assets/dummy.png');
@@ -27,23 +25,30 @@ function create() {
     map.addTilesetImage('Maze', 'tiles');
     layer = map.createLayer(0);
 
+    //TODO adding one tile makes the collision work...??
+    map.putTile(1, 32, 32, layer);
     map.setCollisionByExclusion([0]);
 
     // add character and enable physics
-    char = game.add.sprite(maze.startCell.x * boxSize, maze.startCell.y * boxSize, 'character', 1);
+    char = game.add.sprite(0, 0, 'character');
     game.physics.enable(char, Phaser.Physics.ARCADE);
     char.body.collideWorldBounds = true;
+    // add animation to character
+    anim = char.animations.add('walk');
+    //anim.enableUpdate = true;
+    //anim.onUpdate.add(onUpdate, this);
+    char.animations.play('walk', 2, true);
 
     // cursors for movement
     cursors = game.input.keyboard.createCursorKeys();
 
-    add_alarm_clock(maze.lastCell.x * boxSize, maze.lastCell.y * boxSize);
+    add_alarm_clock();
     maxDistance = calc_max_distance();
 
     // mask
-    mask = game.add.graphics(0, 0);
-    mask.beginFill(0xffffff, 1);
-    mask.drawCircle(8, 16, 150);
+    mask = game.add.graphics(0,0);
+    mask.beginFill(0xffffff);
+    mask.drawCircle(char.position.x, char.position.y, 150);
     layer.mask = mask;
 }
 
@@ -52,7 +57,8 @@ function update() {
 
     movement();
 
-    mask.position = char.position;
+    mask.position.x = char.position.x + 16;
+    mask.position.y = char.position.y + 16;
 
     update_audio_volume();
 }
