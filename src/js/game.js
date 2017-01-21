@@ -5,12 +5,12 @@ var mask;
 var maxDistance;
 var map;
 var layer;
-var mazeWidth = 32;
-var mazeHeight = 18;
+var MAZE_WIDTH = 32;
+var MAZE_HEIGHT = 18;
 var maze;
 var char;
 var cursors;
-var boxSize = 32;
+var BOX_SIZE = 32;
 var CHARACTER_FRAME_RATE = 5;
 
 function preload() {
@@ -22,7 +22,7 @@ function preload() {
 
 function create() {
     // generate and add maze
-    maze = maze_generator(mazeWidth, mazeHeight);
+    maze = maze_generator(MAZE_WIDTH, MAZE_HEIGHT);
     game.load.tilemap('maze', null, get_csv_from_array(maze.maze), Phaser.Tilemap.CSV);
     map = game.add.tilemap('maze');
     map.addTilesetImage('Maze', 'tiles');
@@ -30,7 +30,7 @@ function create() {
     map.setCollisionByExclusion([0]);
 
     // add character and enable physics
-    char = game.add.sprite(maze.startCell.x * boxSize + 8, maze.startCell.y * boxSize, 'character', 1);
+    char = game.add.sprite(maze.startCell.x * BOX_SIZE + 8, maze.startCell.y * BOX_SIZE, 'character', 1);
     game.physics.enable(char, Phaser.Physics.ARCADE);
     char.body.collideWorldBounds = true;
 
@@ -44,7 +44,7 @@ function create() {
     cursors = game.input.keyboard.createCursorKeys();
 
     // add alarm clock
-    add_alarm_clock(maze.lastCell.x * boxSize, maze.lastCell.y * boxSize);
+    add_alarm_clock(maze.lastCell.x * BOX_SIZE, maze.lastCell.y * BOX_SIZE);
     maxDistance = calc_max_distance();
 
     // add mask around character
