@@ -54,6 +54,7 @@ actualGame.prototype = {
 
         if (game.physics.arcade.distanceBetween(char, alarmClock) <= BOX_SIZE) {
             // TODO replace 120 with actual time
+            alarm.stop();
             this.game.state.start("GameOver", true, false, 120);
         }
     }
