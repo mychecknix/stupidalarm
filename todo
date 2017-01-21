@@ -2,9 +2,9 @@ MAIN TOPIC: WAVES
 
 main goals:
     - random map
-        - code to create map (use randomized Prim's algorithm)
+        ✓ code to create map (use randomized Prim's algorithm)
         - render full map -> map size defined by game size
-        - calculator for distance to goal
+        ✓ calculator for distance to goal
     - game name
     - assets
         - create map images
