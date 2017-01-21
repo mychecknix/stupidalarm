@@ -23,6 +23,10 @@ function create() {
     map.addTilesetImage('Maze', 'tiles');
     layer = map.createLayer(0);
 
+    //TODO adding one tile makes the collision work...??
+    map.putTile(1, 32, 32, layer);
+    map.setCollisionByExclusion([0]);
+
     // add character and enable physics
     char = game.add.sprite(0, 0, 'dummy');
     game.physics.enable(char, Phaser.Physics.ARCADE);
@@ -42,6 +46,8 @@ function create() {
 }
 
 function update() {
+    game.physics.arcade.collide(char, layer);
+
     movement();
 
     mask.position.x = char.position.x + 16;
