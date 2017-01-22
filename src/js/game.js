@@ -5,12 +5,9 @@ var actualGame = function () {
     maxDistance = null;
     map = null;
     layer = null;
-    MAZE_WIDTH = 32;
-    MAZE_HEIGHT = 18;
     maze = null;
     char = null;
     cursors = null;
-    BOX_SIZE = 32;
     CHARACTER_FRAME_RATE = 5;
     lastPointerUpTime = null;
 };
@@ -18,7 +15,7 @@ var actualGame = function () {
 actualGame.prototype = {
     create: function () {
         // generate and add maze
-        maze = maze_generator(MAZE_WIDTH, MAZE_HEIGHT);
+        maze = maze_generator(maze_cols, maze_rows);
         game.load.tilemap('maze', null, get_csv_from_array(maze.maze), Phaser.Tilemap.CSV);
         map = game.add.tilemap('maze');
         map.addTilesetImage('Maze', 'tiles');
@@ -26,7 +23,7 @@ actualGame.prototype = {
         map.setCollisionByExclusion([MAZE_FLOOR]);
 
         // add character and enable physics
-        char = game.add.sprite(maze.startCell.x * BOX_SIZE + 8, maze.startCell.y * BOX_SIZE, 'character', 1);
+        char = game.add.sprite(maze.startCell.x * box_size + 8, maze.startCell.y * box_size, 'character', 1);
         game.physics.enable(char, Phaser.Physics.ARCADE);
         char.body.collideWorldBounds = true;
 
@@ -41,7 +38,7 @@ actualGame.prototype = {
 
         // add alarm clock
         add_alarm_clock();
-        maxDistance = calc_max_distance(maze.lastCell.x * BOX_SIZE, maze.lastCell.y * BOX_SIZE);
+        maxDistance = calc_max_distance(maze.lastCell.x * box_size, maze.lastCell.y * box_size);
 
         // add mask around character
         mask = game.add.graphics(0, 0);
@@ -61,7 +58,7 @@ actualGame.prototype = {
         movement();
         update_audio_volume();
 
-        if (game.physics.arcade.distanceBetween(char, alarmClock) <= BOX_SIZE) {
+        if (game.physics.arcade.distanceBetween(char, alarmClock) <= 36) {
             alarm.stop();
             this.game.state.start("GameOver", true, false, Math.floor(game.time.totalElapsedSeconds()));
         }
