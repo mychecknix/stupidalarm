@@ -1,8 +1,9 @@
-var gameOver = function(game) {};
+var gameOver = function (game) {
+};
 
 gameOver.prototype = {
-    init: function(time) {
-        //TODO make something nicer
+    init: function (time) {
+        // TODO make something nicer
         alert("You deactivated the alarm after " + time + " seconds.");
     },
     create: function() {
@@ -10,7 +11,7 @@ gameOver.prototype = {
         //für .zzZZ Partikel-Welle
         //.add.emitter()
     },
-    playGame: function() {
+    playGame: function () {
         this.game.state.start("StupidAlarm");
     }
 };

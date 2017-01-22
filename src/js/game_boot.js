@@ -1,12 +1,11 @@
-var gameBoot = function(game) {
-    console.log("Starting Stupid Alarm...");
+var gameBoot = function (game) {
 };
 
 gameBoot.prototype = {
-    preload: function() {
+    preload: function () {
         this.game.load.image("loading", "assets/loading.png");
     },
-    create: function() {
+    create: function () {
         this.game.state.start("Preload");
     }
 };

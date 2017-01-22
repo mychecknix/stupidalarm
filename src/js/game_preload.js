@@ -1,7 +1,8 @@
-var gamePreload = function(game) {}
+var gamePreload = function (game) {
+};
 
 gamePreload.prototype = {
-    preload: function() {
+    preload: function () {
         var loadingBar = this.add.sprite(160, 240, "loading");
         loadingBar.anchor.setTo(0.5, 0.5);
         this.load.setPreloadSprite(loadingBar);
@@ -13,7 +14,7 @@ gamePreload.prototype = {
         this.game.load.image("play", "assets/play.png");
         this.game.load.image("bigCharacter", "assets/character_big.png");
     },
-    create: function() {
+    create: function () {
         this.game.state.start("Menu");
     }
 };

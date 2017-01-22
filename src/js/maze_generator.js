@@ -44,7 +44,7 @@ function maze_generator(width, height) {
                     continue;
                 }
 
-                walls.push({ floor: { x: startCell.x, y: startCell.y }, wall: { x: startCell.x + i, y: startCell.y + j } });
+                walls.push({floor: {x: startCell.x, y: startCell.y}, wall: {x: startCell.x + i, y: startCell.y + j}});
             }
         }
     }
@@ -94,7 +94,10 @@ function maze_generator(width, height) {
                                 continue;
                             }
 
-                            walls.push({ floor: { x: cellOppositeX, y: cellOppositeY }, wall: { x: cellOppositeX + i, y: cellOppositeY + j } });
+                            walls.push({
+                                floor: {x: cellOppositeX, y: cellOppositeY},
+                                wall: {x: cellOppositeX + i, y: cellOppositeY + j}
+                            });
 
                         }
                     }

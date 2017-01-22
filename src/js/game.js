@@ -1,4 +1,4 @@
-var actualGame = function() {
+var actualGame = function () {
     alarm = null;
     alarmClock = null;
     mask = null;
@@ -16,7 +16,7 @@ var actualGame = function() {
 };
 
 actualGame.prototype = {
-    create: function() {
+    create: function () {
         // generate and add maze
         maze = maze_generator(MAZE_WIDTH, MAZE_HEIGHT);
         game.load.tilemap('maze', null, get_csv_from_array(maze.maze), Phaser.Tilemap.CSV);
@@ -57,7 +57,7 @@ actualGame.prototype = {
         // reset timer
         game.time.reset();
     },
-    update: function() {
+    update: function () {
         movement();
         update_audio_volume();
 
