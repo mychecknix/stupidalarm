@@ -12,6 +12,7 @@ var actualGame = function() {
     cursors = null;
     BOX_SIZE = 32;
     CHARACTER_FRAME_RATE = 5;
+    lastPointerUpTime = null;
 };
 
 actualGame.prototype = {
@@ -50,7 +51,8 @@ actualGame.prototype = {
 
         // add fullscreen mode
         game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
-        game.input.onDown.add(goFull, this); // TODO only enter fullscreen on mouse click (or better, add double click for fullscreen)
+        game.input.onUp.add(setTimeForFullscreen, this);
+        game.input.onDown.add(goFullscreen, this);
     },
     update: function() {
         movement();
@@ -64,11 +66,17 @@ actualGame.prototype = {
     }
 };
 
-function goFull() {
-    if (game.scale.isFullScreen) {
-        game.scale.stopFullScreen();
+function goFullscreen() {
+    if (lastPointerUpTime !== null && (Date.now() - lastPointerUpTime) <= 250) {
+        if (game.scale.isFullScreen) {
+            game.scale.stopFullScreen();
+        }
+        else {
+            game.scale.startFullScreen(false);
+        }
     }
-    else {
-        game.scale.startFullScreen(false);
-    }
+}
+
+function setTimeForFullscreen() {
+    lastPointerUpTime = Date.now();
 }
