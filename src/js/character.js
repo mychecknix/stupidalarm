@@ -9,6 +9,10 @@ function movement() {
         char.body.velocity.x = (150 / (game.width / 2)) * (game.input.pointer1.x - (game.width / 2));
         char.body.velocity.y = (150 / (game.height / 2)) * (game.input.pointer1.y - (game.height / 2));
     }
+    else if (game.input.mousePointer.isDown) {
+        char.body.velocity.x = (150 / (game.width / 2)) * (game.input.mousePointer.x - (game.width / 2));
+        char.body.velocity.y = (150 / (game.height / 2)) * (game.input.mousePointer.y - (game.height / 2));
+    }
     else {
         if (cursors.left.isDown) {
             char.body.velocity.x = -150;

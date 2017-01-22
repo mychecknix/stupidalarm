@@ -9,7 +9,7 @@ var actualGame = function () {
     char = null;
     cursors = null;
     CHARACTER_FRAME_RATE = 5;
-    lastPointerUpTime = null;
+    lastPointerDownTime = null;
 };
 
 actualGame.prototype = {
@@ -59,7 +59,6 @@ actualGame.prototype = {
 
         // add fullscreen mode
         game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
-        game.input.onUp.add(setTimeForFullscreen, this);
         game.input.onDown.add(goFullscreen, this);
 
         // reset timer
@@ -77,7 +76,7 @@ actualGame.prototype = {
 };
 
 function goFullscreen() {
-    if (lastPointerUpTime !== null && (Date.now() - lastPointerUpTime) <= 250) {
+    if ((Date.now() - lastPointerDownTime) <= 250) {
         if (game.scale.isFullScreen) {
             game.scale.stopFullScreen();
         }
@@ -85,8 +84,6 @@ function goFullscreen() {
             game.scale.startFullScreen(false);
         }
     }
-}
 
-function setTimeForFullscreen() {
-    lastPointerUpTime = Date.now();
+    lastPointerDownTime = Date.now();
 }
