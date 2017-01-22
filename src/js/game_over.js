@@ -9,6 +9,7 @@ gameOver.prototype = {
     create: function() {
         var endGame = this.game.add.emitter(this.game.world.centerX, this.world.centerY, 10);
         endGame.makeParticles("zzz");
+        endGame.setAlpha(1, 0, 5000);
         endGame.setRotation(0, 0);
         endGame.setScale(0.3, 1, 0.3, 1, 4000, Phaser.Easing.Quartic.Out);
         endGame.gravity = -100;
