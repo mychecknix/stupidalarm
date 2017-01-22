@@ -16,6 +16,7 @@ gamePreload.prototype = {
         this.game.load.image("bigCharacter", "assets/character_big.png");
         this.game.load.image("bigCharacterSleeping", "assets/character_big_sleep.png");
         this.game.load.image("zzz", "assets/z.png");
+        this.game.load.image("bigClock", "assets/clock_big.png");
     },
     create: function () {
         this.game.state.start("Menu");
