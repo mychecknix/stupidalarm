@@ -13,10 +13,10 @@ main goals:
     ✓ character
         ✓ should move
         ✓ animation
-    - map style
+    ✓ map style
         ✓ black
         ✓ visible circle around the character
-        - movement control (moving on a grid, pressing one time the button moves the character one field)
+        X movement control (moving on a grid, pressing one time the button moves the character one field)
     ✓ sound
         ✓ play sound from clock (loudness proportional to distance from the clock)
     - screens
@@ -26,12 +26,12 @@ main goals:
 stretch goals:
     - time based events e.g. noon: "you should eat!"; if it is dark outside, the same in the game
     - if it's dark outside, you see less but it's quiet
-    ✓ fade in the circle where you see something
     - if there is daylight, you see more, but there is also some noise
+    ✓ fade in the circle where you see something
     - weather api (if it rains outside play rain sound)
     ✓ map size defined by game size
-    - animation: sleeping character
-    - score board
+    ✓ animation: sleeping character
+    ✓ score board
 
 finalizing:
     - remove all non license compliant parts (phaser -> link, music?)
