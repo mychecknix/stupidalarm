@@ -4,12 +4,28 @@ var gameOver = function (game) {
 gameOver.prototype = {
     init: function (time) {
         // TODO make something nicer
-        alert("You deactivated the alarm after " + time + " seconds.");
+
     },
     create: function() {
-        //insert ..zzZZ wave function here (this functions should call than the menu)
-        //für .zzZZ Partikel-Welle
-        //.add.emitter()
+        var endGame = this.game.add.emitter(this.game.world.centerX, this.world.centerY, 10);
+        endGame.makeParticles("zzz");
+        endGame.setRotation(0, 0);
+        endGame.setScale(0.3, 1, 0.3, 1, 4000, Phaser.Easing.Quartic.Out);
+        endGame.gravity = -100;
+        endGame.start(false, 3000, 10);
+        endGame.emitX = 200;
+        endGame.emitY = 200;
+        game.add.tween(endGame).to( { emitX: 800-64 }, 1000, Phaser.Easing.Sinusoidal.InOut, true, 0, Number.MAX_VALUE, true);
+        game.add.tween(endGame).to( { emitY: 200 }, 4000, Phaser.Easing.Sinusoidal.InOut, true, 0, Number.MAX_VALUE, true);
+
+        var playGame = this.game.add.button(this.game.width * 0.1, this.game.height * 0.6, 'replay', this.playGame, this);
+
+        space = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+    },
+    update: function () {
+        if (space.isDown) {
+            this.playGame();
+        }
     },
     playGame: function () {
         this.game.state.start("StupidAlarm");
