@@ -14,6 +14,9 @@ var actualGame = function () {
 
 actualGame.prototype = {
     create: function () {
+        // set background color to black
+        game.stage.backgroundColor = 0x000000;
+
         // generate and add maze
         maze = maze_generator(maze_cols, maze_rows);
         game.load.tilemap('maze', null, get_csv_from_array(maze.maze), Phaser.Tilemap.CSV);
@@ -41,6 +44,14 @@ actualGame.prototype = {
         maxDistance = calc_max_distance(maze.lastCell.x * box_size, maze.lastCell.y * box_size);
 
         // add mask around character
+        bmpData = game.make.bitmapData(300, 300);
+        innerCircle = new Phaser.Circle(200, 200, 75);
+        outerCircle = new Phaser.Circle(200, 200, 160);
+        var gradient = bmpData.context.createRadialGradient(innerCircle.x, innerCircle.y, innerCircle.radius, outerCircle.x, outerCircle.y, outerCircle.radius);
+        gradient.addColorStop(0.2, "transparent");
+        gradient.addColorStop(0.7, "#000000");
+        bmpData.circle(outerCircle.x, outerCircle.y, outerCircle.radius, gradient);
+        vision = this.game.add.image(0, 0, bmpData);
         mask = game.add.graphics(0, 0);
         mask.beginFill(0xffffff, 1);
         mask.drawCircle(8, 16, 150);

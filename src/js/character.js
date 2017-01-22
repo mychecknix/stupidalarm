@@ -40,4 +40,6 @@ function movement() {
     }
 
     mask.position = char.position;
+    vision.position.x = char.position.x - 200 + 8;
+    vision.position.y = char.position.y - 200 + 16;
 }
