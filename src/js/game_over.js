@@ -7,6 +7,8 @@ gameOver.prototype = {
     },
     create: function() {
         //insert ..zzZZ wave function here (this functions should call than the menu)
+        //für .zzZZ Partikel-Welle
+        //.add.emitter()
     },
     playGame: function() {
         this.game.state.start("StupidAlarm");
