@@ -21,7 +21,7 @@ main goals:
         ✓ play sound from clock (loudness proportional to distance from the clock)
     - screens
         ✓ (re)start screen
-        - winning screen
+        ✓ winning screen
 
 stretch goals:
     - time based events e.g. noon: "you should eat!"; if it is dark outside, the same in the game
