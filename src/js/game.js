@@ -53,15 +53,17 @@ actualGame.prototype = {
         game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
         game.input.onUp.add(setTimeForFullscreen, this);
         game.input.onDown.add(goFullscreen, this);
+
+        // reset timer
+        game.time.reset();
     },
     update: function() {
         movement();
         update_audio_volume();
 
         if (game.physics.arcade.distanceBetween(char, alarmClock) <= BOX_SIZE) {
-            // TODO replace 120 with actual time
             alarm.stop();
-            this.game.state.start("GameOver", true, false, 120);
+            this.game.state.start("GameOver", true, false, Math.floor(game.time.totalElapsedSeconds()));
         }
     }
 };
